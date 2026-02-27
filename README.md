@@ -4,7 +4,7 @@ Aplicación para diligenciar, analizar y exportar el **Formato Integral de Plan 
 
 ## Características
 
-- **Autenticación**: inicio de sesión con Google, Facebook o correo y contraseña (con confirmación). Registro gratuito.
+- **Autenticación**: inicio de sesión con Google o correo y contraseña (con confirmación). Registro gratuito.
 - **Popup de bienvenida**: al entrar se muestra información sobre la app y en qué momento aplica el pago por planes.
 - **Formularios por secciones** desplegables (Datos Generales, Vivienda, Agua/Saneamiento, Composición Familiar, Grupos Prioritarios, Prácticas y Recursos).
 - **Módulo dinámico** de integrantes con botón "AGREGAR INTEGRANTE".
@@ -62,7 +62,7 @@ En el panel de Supabase vaya a **SQL Editor** → **New query**, pegue el conten
 
 En **Authentication** → **Providers** habilite los que vaya a usar:
 
-- **Google / Facebook**: siga la guía de Supabase para configurar OAuth (credenciales en cada proveedor y URLs de redirección).
+- **Google**: siga la guía de Supabase para configurar OAuth (credenciales y URLs de redirección).
 - **Email**: puede dejar "Confirm email" desactivado para desarrollo o activarlo en producción.
 
 ### 5. Asignar el primer administrador
@@ -127,7 +127,7 @@ aps-picp-familiar/
 
 ## Uso
 
-1. **Login**: Inicie sesión con Google, Facebook o correo/contraseña. Si es la primera vez, se muestra el popup de bienvenida.
+1. **Login**: Inicie sesión con Google o correo/contraseña. Si es la primera vez, se muestra el popup de bienvenida.
 2. **Formulario**: Diligencie las secciones y use "AGREGAR INTEGRANTE" para cada miembro de la familia. Guarde cuando lo necesite.
 3. **Análisis**: Pulse "Generar Análisis PICP". Se guarda el plan y, si hay planes pendientes de pago, se abre la pantalla de pago ($10.000 COP por plan). Puede pagar por transferencia (datos configurados por el admin), PSE o tarjeta débito (el admin confirma el pago desde el panel).
 4. **Exportar**: Descargue el Excel con toda la información en una sola hoja con formato ordenado.

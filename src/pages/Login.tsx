@@ -67,7 +67,7 @@ export default function Login() {
     }
   }
 
-  const handleOAuth = async (provider: 'google' | 'facebook') => {
+  const handleOAuth = async (provider: 'google') => {
     setError('')
     setAuthLoading(true)
     const { error: err } = await signInWithOAuth(provider)
@@ -109,18 +109,10 @@ export default function Login() {
               >
                 Continuar con Google
               </button>
-              <button
-                type="button"
-                className="btn btn-oauth btn-facebook"
-                onClick={() => handleOAuth('facebook')}
-                disabled={authLoading}
-              >
-                Continuar con Facebook
-              </button>
             </div>
 
             <div className="login-divider">
-              <span>o</span>
+              <span>o continúa con correo</span>
             </div>
 
             <form className="login-form" onSubmit={handleSubmit}>
