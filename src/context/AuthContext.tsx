@@ -13,7 +13,7 @@ interface AuthContextType {
   loading: boolean
   signInWithEmail: (email: string, password: string) => Promise<{ error: Error | null }>
   signUpWithEmail: (email: string, password: string, confirmPassword: string, fullName?: string) => Promise<{ error: Error | null }>
-  signInWithOAuth: (provider: 'google' | 'facebook' | 'apple') => Promise<{ error: Error | null }>
+  signInWithOAuth: (provider: 'google' | 'facebook') => Promise<{ error: Error | null }>
   signOut: () => Promise<void>
   setWelcomePopupSeen: () => Promise<void>
 }
@@ -113,11 +113,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { error }
   }, [])
 
-  const signInWithOAuth = useCallback(async (provider: 'google' | 'facebook' | 'apple') => {
+  const signInWithOAuth = useCallback(async (provider: 'google' | 'facebook') => {
     if (!hasSupabase || !supabase) return { error: new Error('Supabase no configurado') }
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: provider === 'apple' ? 'apple' : provider,
-    })
+    const { error } = await supabase.auth.signInWithOAuth({ provider })
     return { error }
   }, [])
 

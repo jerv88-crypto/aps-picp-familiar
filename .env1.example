@@ -1,0 +1,6 @@
+# Supabase (crear proyecto en https://supabase.com y pegar aquí)
+VITE_SUPABASE_URL=https://aps-picp-familiar.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZmZHVwZXF5d2poenRvcmxzeGZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE2MjM1MDksImV4cCI6MjA4NzE5OTUwOX0.UvfktY9v6mxMOamvg_cj_M9aQdY-q_ElmU_RHfVmjZs
+
+# Opcional: contraseña de administrador (si la app la usa)
+# VITE_ADMIN_PASSWORD=

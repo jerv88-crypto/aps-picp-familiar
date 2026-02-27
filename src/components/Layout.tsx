@@ -4,6 +4,8 @@ import { useAuth } from '../context/AuthContext'
 import { usePlanSummary } from '../hooks/usePlanSummary'
 import WelcomePopup from './WelcomePopup'
 
+const LOGO_URL = `${import.meta.env.BASE_URL}logo-aps.png`
+
 export default function Layout() {
   const { user, isAdmin, signOut } = useAuth()
   const { summary } = usePlanSummary()
@@ -19,7 +21,7 @@ export default function Layout() {
       <header className="header">
         <div className="header-content">
           <div className="logo">
-            <span className="logo-icon">🏥</span>
+            <img src={LOGO_URL} alt="APS" className="logo-img" />
             <div>
               <h1>PICP APS Familiar</h1>
               <p>Plan Integral de Cuidado Primario en Salud - Ley 3280/2018</p>

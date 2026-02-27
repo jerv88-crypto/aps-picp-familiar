@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthContext'
 import { hasSupabase } from '../lib/supabase'
 
 const DEV_USER_KEY = 'picp_dev_user'
+const LOGO_URL = `${import.meta.env.BASE_URL}logo-aps.png`
 
 export default function Login() {
   const { user, loading, signInWithEmail, signUpWithEmail, signInWithOAuth } = useAuth()
@@ -66,7 +67,7 @@ export default function Login() {
     }
   }
 
-  const handleOAuth = async (provider: 'google' | 'facebook' | 'apple') => {
+  const handleOAuth = async (provider: 'google' | 'facebook') => {
     setError('')
     setAuthLoading(true)
     const { error: err } = await signInWithOAuth(provider)
@@ -83,7 +84,7 @@ export default function Login() {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <span className="logo-icon">🏥</span>
+          <img src={LOGO_URL} alt="APS" className="login-logo" />
           <h1>PICP APS Familiar</h1>
           <p>Inicie sesión o regístrese para continuar</p>
         </div>
@@ -115,14 +116,6 @@ export default function Login() {
                 disabled={authLoading}
               >
                 Continuar con Facebook
-              </button>
-              <button
-                type="button"
-                className="btn btn-oauth btn-apple"
-                onClick={() => handleOAuth('apple')}
-                disabled={authLoading}
-              >
-                Continuar con Apple (iCloud)
               </button>
             </div>
 
